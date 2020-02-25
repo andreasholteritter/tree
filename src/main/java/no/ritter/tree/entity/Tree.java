@@ -10,17 +10,17 @@ import javax.persistence.Table;
 public class Tree {
 
     @Id
-    private long id;
+    private int id;
     private String name;
 
     public Tree() {}
 
-    public Tree(long id, String name) {
+    public Tree(int id, String name) {
         this.id = id;
         this.name = name;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
