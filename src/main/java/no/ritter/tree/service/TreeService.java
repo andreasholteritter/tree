@@ -14,7 +14,7 @@ import java.util.Optional;
 public class TreeService implements TreeRepository {
 
     @Autowired
-    TreeRepository repository;
+    private TreeRepository repository;
 
     @Override
     public <S extends Tree> S save(S entity) {
@@ -23,6 +23,9 @@ public class TreeService implements TreeRepository {
 
     @Override
     public <S extends Tree> Iterable<S> saveAll(Iterable<S> entities) {
+        List<Tree> trees = new ArrayList<Tree>();
+        entities.forEach(tree -> trees.add(tree));
+        repository.saveAll(trees);
         return null;
     }
 
@@ -50,7 +53,7 @@ public class TreeService implements TreeRepository {
 
     @Override
     public Iterable<Tree> findAllById(Iterable<Integer> integers) {
-        return null;
+        return repository.findAllById(integers);
     }
 
     @Override
