@@ -27,11 +27,7 @@ public class Tree {
         return name;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setName() {
+    public void setName(String name) {
         this.name = name;
     }
 }
