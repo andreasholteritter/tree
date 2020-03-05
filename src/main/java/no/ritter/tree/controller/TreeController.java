@@ -4,6 +4,7 @@ import no.ritter.tree.entity.Tree;
 import no.ritter.tree.service.TreeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -30,7 +31,8 @@ public class TreeController {
     @RequestMapping(
             name = "Create a tree",
             path = "/",
-            method = RequestMethod.POST
+            method = RequestMethod.POST,
+            consumes = MediaType.APPLICATION_JSON_VALUE
     )
     public ResponseEntity<Integer> saveTree
             (@RequestBody Tree tree) {
